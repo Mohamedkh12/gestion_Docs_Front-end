@@ -1,4 +1,4 @@
-import SignInPage from "./dashboard/signin/page";
+import SignInPage from "./signin/page";
 
 export default function Home() {
   return (

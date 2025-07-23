@@ -136,7 +136,7 @@ export default function SignInForm() {
 
                                 </div>
                                 <div className="text-center mt-3 " >
-                                    <p className={"text-muted mb-0"}>Don't have account yet? <a onClick={()=>router.push("/dashboard/signup")}
+                                    <p className={"text-muted mb-0"}>Don't have account yet? <a onClick={()=>router.push("/signup")}
                                                                                                 style={{cursor:"pointer"}}
                                                                                                 className="text-primary fw-bold">Sign up</a></p>
                                 </div>

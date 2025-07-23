@@ -4,7 +4,7 @@ import api from "@/lib/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
-import { IconLock, IconMail, IconUser, IconPhone, IconBuilding, IconEye, IconEyeClosed } from "@tabler/icons-react";
+import { IconLock, IconMail, IconUser, IconEye, IconEyeClosed } from "@tabler/icons-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { SignupFormSchema } from "../../types/auth";
@@ -48,7 +48,7 @@ export default function SignUpForm() {
     };
 
     return (
-        <div className="container container-tight py-4" style={{ maxWidth: "550px",maxHeight:"700px"}}>
+        <div className="container container-tight py-4 mb-5" style={{ maxWidth: "550px",maxHeight:"700px",paddingBottom:"20px"}}>
             <div className="card card-md" >
                 <div className="text-center mt-5">
                     <h1 className="text-primary">Créer un nouveau compte</h1>
