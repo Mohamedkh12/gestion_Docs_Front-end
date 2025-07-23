@@ -162,6 +162,10 @@ export default function TagPage() {
         </>
     );
 
+    const truncate = (text: string, maxLength = 30) =>
+        text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+
+
     return (
         <div className="p-4">
             {showAdd && (
@@ -222,7 +226,9 @@ export default function TagPage() {
                                 <th style={{ cursor: "pointer" }} onClick={() => requestSort("color")}>
                                     Couleur {getSortIcon("color")}
                                 </th>
-                                <th>Description</th>
+                                <th style={{ cursor: "pointer" }} onClick={() => requestSort("description")}>
+                                    Description{getSortIcon("description")}
+                                </th>
                                 <th style={{ cursor: "pointer" }} onClick={() => requestSort("createdAt")}>
                                     Créé {getSortIcon("createdAt")}
                                 </th>
@@ -256,7 +262,9 @@ export default function TagPage() {
                                                 {tag.color}
                                             </span>
                                     </td>
-                                    <td>{tag.description || "-"}</td>
+                                    <td title={tag.description || ""}>
+                                        {tag.description ? truncate(tag.description, 30) : "-"}
+                                    </td>
                                     <td>{new Date(tag.createdAt).toLocaleDateString()}</td>
                                     <td>{new Date(tag.updatedAt).toLocaleDateString()}</td>
                                     <td className="text-end d-flex gap-2 justify-content-end">

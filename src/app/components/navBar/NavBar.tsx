@@ -54,7 +54,7 @@ export default function Navbar() {
                 background: "#fff",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
                 position: "relative",
-                zIndex: 9999,
+                //zIndex: 9000,
             }}
         >
             {user && (

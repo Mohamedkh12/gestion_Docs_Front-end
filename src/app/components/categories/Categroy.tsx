@@ -181,6 +181,9 @@ export default function CategoryPage() {
         );
     };
 
+    const truncate = (text: string, maxLength = 30) =>
+        text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+
     return (
         <div className="p-4">
             {showAddCategory && (
@@ -266,7 +269,9 @@ export default function CategoryPage() {
                                             />
                                         </td>
                                         <td>{cat.nomCat}</td>
-                                        <td>{cat.description || "N/A"}</td>
+                                        <td title={cat.description || ""}>
+                                            {cat.description ? truncate(cat.description, 30) : "-"}
+                                        </td>
                                         <td>{new Date(cat.createdAt).toLocaleDateString()}</td>
                                         <td>{new Date(cat.updatedAt).toLocaleDateString()}</td>
                                         <td className="text-end d-flex gap-2 justify-content-end">
